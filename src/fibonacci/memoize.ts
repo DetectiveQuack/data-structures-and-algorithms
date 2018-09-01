@@ -1,6 +1,6 @@
 const cache: { [key: number]: number } = {};
 
-function fibonacci(n: number): number {
+function memoize(n: number): number {
   if (n in cache) {
     return cache[n];
   }
@@ -10,9 +10,9 @@ function fibonacci(n: number): number {
     return cache[n];
   }
 
-  cache[n] = fibonacci(n - 1) + fibonacci(n - 2);
+  cache[n] = memoize(n - 1) + memoize(n - 2);
 
   return cache[n];
 };
 
-export default fibonacci;
+export default memoize;
