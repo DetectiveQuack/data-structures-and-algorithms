@@ -17,7 +17,7 @@ function performDurations(dir: string, title: string, timings: number[] = [], lo
 
     return {
       duration: start - end,
-      algorithm: f.substring(f.lastIndexOf('/') + 1, f.lastIndexOf('.'))
+      algorithm: algorithm.name
     };
   });
 
