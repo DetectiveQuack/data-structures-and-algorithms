@@ -13,6 +13,6 @@ function memoize(n: number): number {
   cache[n] = memoize(n - 1) + memoize(n - 2);
 
   return cache[n];
-};
+}
 
 export default memoize;

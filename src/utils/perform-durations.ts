@@ -1,12 +1,17 @@
 import now = require('performance-now');
 import { logger, getFiles, humanize } from '@detectiveQuack/utils';
 
-function performDurations(dir: string, title: string, timings: number[] = [], log = true) {
+function performDurations(
+  dir: string,
+  title: string,
+  timings: number[] = [],
+  log = true
+) {
   const files = getFiles(dir);
 
   logger.info(title.toUpperCase());
 
-  const durations = files.map(f => {
+  const durations = files.map((f) => {
     const algorithm = require(f).default;
 
     const start = now();
@@ -25,7 +30,9 @@ function performDurations(dir: string, title: string, timings: number[] = [], lo
 
   if (log) {
     sorted.forEach((timings) => {
-      logger.info(`${timings.algorithm}: ${humanize.humanize(timings.duration)}`);
+      logger.info(
+        `${timings.algorithm}: ${humanize.humanize(timings.duration)}`
+      );
     });
   }
 
