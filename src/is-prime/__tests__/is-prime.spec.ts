@@ -6,7 +6,7 @@ import { join } from 'path';
 describe('isPrime', () => {
   after(() => {
     // prettier-ignore
-    performDurations(join(__dirname, '..'), [1000000]);
+    performDurations(join(__dirname, '..'), [10000000]);
   });
 
   it('should return truthy for prime numbers', () => {
