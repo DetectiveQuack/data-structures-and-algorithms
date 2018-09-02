@@ -3,13 +3,13 @@ import { logger, getFiles, humanize } from '@detectiveQuack/utils';
 
 function performDurations(
   dir: string,
-  timings: number[] = [],
+  timings: number[],
   title = '',
   log = true
 ) {
   const files = getFiles(dir);
 
-  if (title) {
+  if (title && log) {
     logger.info(title.toUpperCase());
   }
 
