@@ -7,7 +7,7 @@ import recursive from '../recursive';
 
 describe('Fibonacci', () => {
   after(() => {
-    performDurations(join(__dirname, '..'), [40, 30, 20, 12, 6]);
+    performDurations(join(__dirname, '..'), [20, 12, 6]);
   });
 
   it('should return 144 if 12 is passed in', () => {
