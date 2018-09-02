@@ -6,6 +6,10 @@ import memoize from '../memoize';
 import recursive from '../recursive';
 
 describe('Fibonacci', () => {
+  after(() => {
+    performDurations(join(__dirname, '..'), '', [40, 30, 20, 12, 6]);
+  });
+
   it('should return 144 if 12 is passed in', () => {
     expect(recursive(12)).to.equal(144);
     expect(iterative(12)).to.equal(144);
