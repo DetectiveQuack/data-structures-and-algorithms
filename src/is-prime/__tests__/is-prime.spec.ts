@@ -6,7 +6,7 @@ import { join } from 'path';
 describe('isPrime', () => {
   after(() => {
     // prettier-ignore
-    performDurations(join(__dirname, '..'), [40, 30, 20, 12, 6, 1, 27, 29, 7]);
+    performDurations(join(__dirname, '..'), [1000000]);
   });
 
   it('should return truthy for prime numbers', () => {
@@ -45,5 +45,9 @@ describe('isPrime', () => {
     primeNumbers.forEach((pn) => {
       expect(isPrime(pn)).to.be.false;
     });
+  });
+
+  it('should return falsey for 0', () => {
+    expect(isPrime(0)).to.be.false;
   });
 });
