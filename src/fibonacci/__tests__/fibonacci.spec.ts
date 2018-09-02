@@ -6,10 +6,6 @@ import memoize from '../memoize';
 import recursive from '../recursive';
 
 describe('Fibonacci', () => {
-  after(() => {
-    performDurations(join(__dirname, '..'), [20, 12, 6]);
-  });
-
   it('should return 144 if 12 is passed in', () => {
     expect(recursive(12)).to.equal(144);
     expect(iterative(12)).to.equal(144);
@@ -28,7 +24,7 @@ describe('Fibonacci', () => {
   it('should have memoize as the fastest and recursive as the slowest', () => {
     const durations = performDurations(
       join(__dirname, '..'),
-      [20, 12, 32, 8],
+      [20, 12, 24, 8],
       '',
       false
     );

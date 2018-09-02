@@ -1,14 +1,7 @@
 import { expect } from 'chai';
 import isPrime from '../is-prime';
-import { performDurations } from '@detectiveQuack/utils';
-import { join } from 'path';
 
 describe('isPrime', () => {
-  after(() => {
-    // prettier-ignore
-    performDurations(join(__dirname, '..'), [10000000]);
-  });
-
   it('should return truthy for prime numbers', () => {
     // prettier-ignore
     const primeNumbers = [
