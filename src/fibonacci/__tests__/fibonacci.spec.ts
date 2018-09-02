@@ -7,7 +7,7 @@ import recursive from '../recursive';
 
 describe('Fibonacci', () => {
   after(() => {
-    performDurations(join(__dirname, '..'), '', [40, 30, 20, 12, 6]);
+    performDurations(join(__dirname, '..'), [40, 30, 20, 12, 6]);
   });
 
   it('should return 144 if 12 is passed in', () => {
@@ -19,8 +19,8 @@ describe('Fibonacci', () => {
   it('should have memoize as the fastest and recursive as the slowest', () => {
     const durations = performDurations(
       join(__dirname, '..'),
-      '',
       [20, 12, 32, 8],
+      '',
       false
     );
 

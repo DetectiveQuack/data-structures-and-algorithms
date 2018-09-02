@@ -6,7 +6,7 @@ import { join } from 'path';
 describe('isPrime', () => {
   after(() => {
     // prettier-ignore
-    performDurations(join(__dirname, '..'), '', [40, 30, 20, 12, 6, 1, 27, 29, 7]);
+    performDurations(join(__dirname, '..'), [40, 30, 20, 12, 6, 1, 27, 29, 7]);
   });
 
   it('should return truthy for prime numbers', () => {

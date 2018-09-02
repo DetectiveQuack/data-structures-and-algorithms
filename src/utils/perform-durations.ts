@@ -3,13 +3,15 @@ import { logger, getFiles, humanize } from '@detectiveQuack/utils';
 
 function performDurations(
   dir: string,
-  title: string,
   timings: number[] = [],
+  title = '',
   log = true
 ) {
   const files = getFiles(dir);
 
-  logger.info(title.toUpperCase());
+  if (title) {
+    logger.info(title.toUpperCase());
+  }
 
   const durations = files.map((f) => {
     const algorithm = require(f).default;
@@ -29,6 +31,7 @@ function performDurations(
   const sorted = durations.sort((a, b) => b.duration - a.duration);
 
   if (log) {
+    logger.info(''); // add spacing before log
     sorted.forEach((timings) => {
       logger.info(
         `${timings.algorithm}: ${humanize.humanize(timings.duration)}`
