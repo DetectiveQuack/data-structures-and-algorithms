@@ -1,6 +1,6 @@
+import { logger } from '@detectiveQuack/utils';
 import { expect } from 'chai';
 import { SinonSpy, stub } from 'sinon';
-import logger from '../../utils/logger';
 import timeoutArgumentsEs5 from '../timeout-arguments-es5';
 import timeoutArgumentsEs6 from '../timeout-arguments-es6';
 import timeoutArgumentsFail from '../timeout-arguments-fail';

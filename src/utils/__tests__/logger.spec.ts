@@ -1,6 +1,6 @@
+import { logger } from '@detectiveQuack/utils';
 import { expect } from 'chai';
 import { LogEntry } from 'winston';
-import logger from '../logger';
 
 describe('logger', () => {
   it('should log out the durations of the method', (done) => {

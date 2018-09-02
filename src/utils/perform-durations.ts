@@ -1,5 +1,5 @@
 import now = require('performance-now');
-import { logger, getFiles, humanize } from '@detectiveQuack/utils';
+import { getFiles, humanize, logger } from '@detectiveQuack/utils';
 
 function performDurations(
   dir: string,

@@ -1,4 +1,4 @@
-import logger from '../utils/logger';
+import { logger } from '@detectiveQuack/utils';
 
 function timeoutArgumentsFail(n: number) {
   // tslint:disable-next-line no-var-keyword

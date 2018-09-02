@@ -1,8 +1,7 @@
-import { performDurations } from '@detectiveQuack/utils';
+import { logger, performDurations } from '@detectiveQuack/utils';
 import { expect } from 'chai';
 import { join } from 'path';
 import { SinonSpy, stub } from 'sinon';
-import logger from '../logger';
 
 describe('performDurations', () => {
   afterEach(() => {
@@ -12,7 +11,7 @@ describe('performDurations', () => {
   it('should log out the durations of the method', () => {
     const loggerSpy = stub(logger, 'info');
 
-    const durations = performDurations(join(__dirname, '../../fibonacci'), [1]);
+    const durations = performDurations(join(__dirname, '../../algorithms/fibonacci'), [1]);
 
     expect(loggerSpy.firstCall.args).to.deep.equal(['']);
     expect(loggerSpy.callCount).to.equal(durations.length + 1);
@@ -22,7 +21,7 @@ describe('performDurations', () => {
     const loggerSpy = stub(logger, 'info');
 
     const durations = performDurations(
-      join(__dirname, '../../fibonacci'),
+      join(__dirname, '../../algorithms/fibonacci'),
       [1],
       'Test'
     );
@@ -35,7 +34,7 @@ describe('performDurations', () => {
   it('should not log outanything', () => {
     const loggerSpy = stub(logger, 'info');
 
-    performDurations(join(__dirname, '../../fibonacci'), [1], 'Test', false);
+    performDurations(join(__dirname, '../../algorithms/fibonacci'), [1], 'Test', false);
 
     expect(loggerSpy.callCount).to.equal(0);
   });
